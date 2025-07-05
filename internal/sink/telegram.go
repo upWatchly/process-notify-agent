@@ -18,6 +18,7 @@ var emoji = map[string]string{
 	"restart":                 "🔄",
 	"die":                     "❌",
 	"oom-killed":              "💀",
+	"completed":               "✅",
 	"health_status:unhealthy": "⚠️",
 }
 

@@ -47,6 +47,9 @@ func (w *DockerWatcher) Run(ctx context.Context, out chan<- Event) error {
 			if act == "die" && m.Actor.Attributes["oomKilled"] == "true" {
 				act = "oom-killed"
 			}
+			if act == "die" && exit != nil && *exit == 0 {
+				act = "completed"
+			}
 			out <- Event{
 				Source:     "docker",
 				Service:    m.Actor.Attributes["name"],
